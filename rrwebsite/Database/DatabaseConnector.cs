@@ -1,53 +1,52 @@
 ﻿using MySql.Data.MySqlClient;
 
-namespace .Database
+namespace Database;
+
+public static class DatabaseConnector
 {
-    public static class DatabaseConnector
+
+    public static List<Dictionary<string, object>> GetRows(string query)
     {
+        // stel in waar de database gevonden kan worden
+        // string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=fastfood;Uid=lgg;Pwd=<jouwwachtwoordhier>;";
+        string connectionString = "Server=172.16.160.21;Port=3306;Database=fastfood;Uid=lgg;Pwd=CCSQrL8HwAJWyyzv;";
 
-        public static List<Dictionary<string, object>> GetRows(string query)
+        // maak een lege lijst waar we de namen in gaan opslaan
+        List<Dictionary<string, object>> rows = new List<Dictionary<string, object>>();
+
+
+        // verbinding maken met de database
+        using (MySqlConnection conn = new MySqlConnection(connectionString))
         {
-            // stel in waar de database gevonden kan worden
-            // string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=fastfood;Uid=lgg;Pwd=<jouwwachtwoordhier>;";
-            string connectionString = "Server=172.16.160.21;Port=3306;Database=fastfood;Uid=lgg;Pwd=CCSQrL8HwAJWyyzv;";
+            // verbinding openen
+            conn.Open();
 
-            // maak een lege lijst waar we de namen in gaan opslaan
-            List<Dictionary<string, object>> rows = new List<Dictionary<string, object>>();
+            // SQL query die we willen uitvoeren
+            MySqlCommand cmd = new MySqlCommand(query, conn);
 
-
-            // verbinding maken met de database
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            // resultaat van de query lezen
+            using (var reader = cmd.ExecuteReader())
             {
-                // verbinding openen
-                conn.Open();
+                var tableData = reader.GetSchemaTable();
 
-                // SQL query die we willen uitvoeren
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-
-                // resultaat van de query lezen
-                using (var reader = cmd.ExecuteReader())
+                // elke keer een regel (of eigenlijk: database rij) lezen
+                while (reader.Read())
                 {
-                    var tableData = reader.GetSchemaTable();
+                    var row = new Dictionary<string, object>();
 
-                    // elke keer een regel (of eigenlijk: database rij) lezen
-                    while (reader.Read())
+                    // haal voor elke kolom de waarde op en voeg deze toe
+                    for (int i = 0; i < reader.FieldCount; i++)
                     {
-                        var row = new Dictionary<string, object>();
-
-                        // haal voor elke kolom de waarde op en voeg deze toe
-                        for (int i = 0; i < reader.FieldCount; i++)
-                        {
-                            row[reader.GetName(i)] = reader.GetValue(i);
-                        }
-
-                        rows.Add(row);
+                        row[reader.GetName(i)] = reader.GetValue(i);
                     }
+
+                    rows.Add(row);
                 }
             }
-
-            // return de lijst met namen
-            return rows;
         }
 
+        // return de lijst met namen
+        return rows;
     }
+
 }
