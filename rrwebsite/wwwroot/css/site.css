@@ -16,3 +16,24 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+header {
+    background: #66CCFF;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://i.imgur.com/ss1L9Hg.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: brightness(80%);
+}
