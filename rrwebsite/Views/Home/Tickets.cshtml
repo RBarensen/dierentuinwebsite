@@ -1,0 +1,169 @@
+﻿@{
+    ViewData["Title"] = "Ticketverkoop, 1 ticket = 24,40!";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p></p>
+<style> body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://th.bing.com/th/id/R.f845f772c63ec511d4e0089f960ba4bb?rik=UEMdYz%2feTV196Q&riu=http%3a%2f%2fimg.fotocommunity.com%2fflamingo-26505c96-a495-4b1d-b23c-ea2ee0b7fdd1.jpg%3fheight%3d1080&ehk=SpS5cAW%2bYBz%2f%2b8ri7vl2FidJEIq3QHsCWC2%2fQRSMTGg%3d&risl=&pid=ImgRaw&r=0');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: brightness(80%);
+}
+header {
+    background: #FDA4B8;
+}
+</style>
+
+<html>
+<head>
+    <title>Contactpagina</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 5px;
+        }
+
+        .success-message {
+            color: green;
+            margin-top: 5px;
+        }
+
+        .btn-link {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contactpagina</h1>
+
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Naam:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mailadres:</label>
+                <input type="email" id="email" name="email" required>
+                <span id="emailError" class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Telefoonnummer:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <span id="phoneError" class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Aantal personen:</label>
+                <input type="number" id="quantity" name="quantity" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Versturen</button>
+            </div>
+        </form>
+
+        <div id="successMessage" class="success-message"></div>
+
+        <div class="form-group">
+            <a href="https://business.tikkie.me/login" class="btn-link">Betaalmethode</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+
+            var emailError = document.getElementById('emailError');
+            var phoneError = document.getElementById('phoneError');
+            var successMessage = document.getElementById('successMessage');
+
+            // E-mailvalidatie
+            if (!validateEmail(email)) {
+                emailError.textContent = "Ongeldig e-mailadres";
+                return;
+            } else {
+                emailError.textContent = "";
+            }
+
+            // Telefoonnummervalidatie
+            if (!validatePhoneNumber(phone)) {
+                phoneError.textContent = "Ongeldig telefoonnummer";
+                return;
+            } else {
+                phoneError.textContent = "";
+            }
+
+            // Toon bedankbericht
+            successMessage.textContent = "Bedankt voor het invullen van het formulier!";
+
+            // Reset het formulier
+            document.getElementById('contactForm').reset();
+        });
+
+        // Functie om e-mailadres te valideren
+        function validateEmail(email) {
+            var emailRegex =;
+            return emailRegex.test(email);
+        }
+
+        // Functie om telefoonnummer te valideren
+        function validatePhoneNumber(phone) {
+            var phoneRegex =;
+            return phoneRegex.test(phone);
+        }
+    </script>
+</body>
+</html>
