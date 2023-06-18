@@ -17,8 +17,19 @@ namespace rrwebsite.Controllers
         {
             return View();
         }
-
-        public IActionResult Privacy()
+        public IActionResult Aap()
+        {
+            return View();
+        }
+        public IActionResult Dolfijn()
+        {
+            return View();
+        }
+        public IActionResult Leeuw()
+        {
+            return View();
+        }
+        public IActionResult Giraffe()
         {
             return View();
         }
