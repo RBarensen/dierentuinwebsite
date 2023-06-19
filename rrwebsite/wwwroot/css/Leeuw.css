@@ -1,0 +1,66 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://www.bellewaerde.be/sites/default/files/styles/1072x800_crop/public/2020-03/Photo%20page%20Leeuw.jpg?itok=wMLQeaJL');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: brightness(80%);
+}
+
+header {
+    background: #FFA610;
+}
+
+.leeuw {
+    position: absolute;
+    top: 200px;
+    right: 70px;
+}
+
+    .leeuw img {
+        width: 700px;
+        height: 600px;
+        border-radius: 50%;
+    }
+
+.info {
+    top: -50px;
+    margin-left: -635px;
+    position: relative;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    width: 1000px;
+}
+
+.h1, h1 {
+    font-size: calc(1rem + 0.5vw);
+}

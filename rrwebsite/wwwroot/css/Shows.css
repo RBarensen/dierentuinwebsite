@@ -1,0 +1,103 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #6CC7F9;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: brightness(80%);
+}
+
+header {
+    background: #67C8FF;
+}
+
+.dolfijnenshow {
+    position: absolute;
+    top: 150px;
+    right: 40px;
+}
+
+    .dolfijnenshow img {
+        width: 400px;
+        height: 300px;
+        border-radius: 50%;
+    }
+
+.leeuwenshows {
+    position: absolute;
+    top: 550px;
+    right: 40px;
+}
+
+    .leeuwenshows img {
+        width: 400px;
+        height: 300px;
+        border-radius: 50%;
+    }
+
+.apenshows {
+    position: absolute;
+    top: 150px;
+    right: 500px;
+}
+
+    .apenshows img {
+        width: 400px;
+        height: 300px;
+        border-radius: 50%;
+    }
+
+.giraffeshows {
+    position: absolute;
+    top: 550px;
+    right: 500px;
+}
+
+    .giraffeshows img {
+        width: 400px;
+        height: 300px;
+        border-radius: 50%;
+    }
+
+.tekst {
+    top: 40px;
+    margin-left: -660px;
+    position: relative;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    width: 800px;;
+    height: 600px;
+}
+
+.h1, h1 {
+    font-size: calc(1rem + 0.5vw);
+}
