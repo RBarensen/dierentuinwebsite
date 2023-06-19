@@ -61,15 +61,51 @@
             position: relative;
         }
 
-        .image-container {
+        .linkaap {
             position: absolute;
-            top: 70px;
+            top: 100px;
             left: 50px;
         }
 
-            .image-container img {
-                width: 250px;
-                height: 250px;
+            .linkaap img {
+                width: 350px;
+                height: 350px;
+                border-radius: 50%;
+            }
+
+        .linkdolfijn {
+            position: absolute;
+            top: 500px;
+            left: 50px;
+        }
+
+         .linkdolfijn img {
+                width: 350px;
+                height: 350px;
+                border-radius: 50%;
+            }
+
+        .linkleeuw {
+            position: absolute;
+            top: 100px;
+            right: 50px;
+        }
+
+            .linkleeuw img {
+                width: 350px;
+                height: 350px;
+                border-radius: 50%;
+            }
+
+        .linkgiraffe {
+            position: absolute;
+            top: 500px;
+            right: 50px;
+        }
+
+            .linkgiraffe img {
+                width: 350px;
+                height: 350px;
                 border-radius: 50%;
             }
 
@@ -84,6 +120,20 @@
             z-index: 999;
         }
 
+        .info {
+            position: absolute;
+            top: 700px;
+            right: 590px;
+            justify-content: center;
+            align-items: center;
+            height: calc(20vh);
+            text-align: center;
+            color: #FFFFFF;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            width: calc(40%);
+        }
+
         .content {
             margin-top: 10px;
             display: flex;
@@ -91,49 +141,46 @@
             align-items: center;
             height: calc(40vh);
             text-align: center;
-            color: white;
+            color: #FFFFFF;
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             width: calc(60%);
             margin-left: 250px;
             margin-bottom: -20px;
-       
-        }
-
-        .h1, h1 {
+        } 
+            
+        .h1, h1
+        {
             font-size: calc(1rem + 0.5vw);
         }
 
-        .image-container {
-            position: absolute;
-            top: 100px;
-            left: 30px;
-            width: 300px;
-            height: auto;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 30px;
-        }
 
-            .image-container img {
-                max-width: 100%;
-                max-height: 100%;
-                object-fit: cover;
-            }
 
        
-
-
-
         }
     </style>
 </head>
 
 <body>
     <a href="http://localhost:5010/Home/Aap">
-            <div class="image-container">
+            <div class="linkaap">
                 <img src="https://th.bing.com/th/id/OIP.GxtMJS-lQVps-H8HmudEEwHaHa?pid=ImgDet&w=500&h=500&rs=1">
             </div>
+    </a>
+    <a href="http://localhost:5010/Home/Dolfijn">
+        <div class="linkdolfijn">
+            <img src="https://dierenwiki.nl/wp-content/uploads/2021/04/Dolfijnen-Dolfijnen.jpg">
+        </div>
+    </a>
+    <a href="http://localhost:5010/Home/Leeuw">
+        <div class="linkleeuw">
+            <img src="https://dierenwiki.nl/wp-content/uploads/2019/01/Leeuwen-1-300x300.jpg">
+        </div>
+    </a>
+    <a href="http://localhost:5010/Home/Giraffe">
+        <div class="linkgiraffe">
+            <img src="https://optimise2.assets-servd.host/maniacal-finch/production/animals/reticulated-giraffe-01-01.jpg?w=1200&auto=compress%2Cformat&fit=crop&dm=1658951271&s=179de228b20aafcd748a5f0dc8fde776">
+        </div>
     </a>
 </body>
 
@@ -144,10 +191,30 @@
         Heeft u zin om dieren te bekijken, of meer? Wij kunnen het regelen. U kunt bij 
         aankoop van een ticket gebruik maken van onze dierenshows, en wij bieden op deze
         website informatie aan over allerlei dieren zodat u zich alvast kan inlezen over
-        wat u te zien krijgt!
+        wat u te zien krijgt! Druk op de foto's van de dieren om meer informatie te vinden!
         </h1>
     </div>
-
+</body>
+<body>
+    <div class="info">
+        <h1> 
+            <b> 
+            Voor onze info, 
+            </b>
+        </h1>
+        <h1>
+            <b>
+            Ramses Bude, Westeinde 124 Voorburg, 2275AH, 0643299258
+            </b>
+        </h1>
+        <h1>
+            <b>
+            Ruben Barensen, Koninginnelaan 62 Voorburg, 0633130000
+            </b>
+        </h1>
+    </div>
+</body>
+<body>
     <div class="cookie-popup">
         <p>Deze website maakt gebruik van cookies om de gebruikservaring te verbeteren. Door deze site te blijven gebruiken, ga je akkoord met ons <a href="/privacy">privacybeleid</a>.</p>
         <button onclick="acceptCookie()">Accepteren</button>
