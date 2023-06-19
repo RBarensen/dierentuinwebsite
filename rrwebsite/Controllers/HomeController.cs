@@ -29,6 +29,10 @@ namespace rrwebsite.Controllers
         {
             return View();
         }
+        public IActionResult Shows()
+        {
+            return View();
+        }
         public IActionResult Giraffe()
         {
             return View();
